@@ -43,22 +43,20 @@ for (let i = 0; i < 50; i++) {
   starsContainer.appendChild(star);
 }
 
-// Toggle do menu mobile
 const nav = document.querySelector('nav');
 const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('nav a');
+const links = document.querySelectorAll('nav a');
 
-navToggle.addEventListener('click', () => {
+function toggleNav() {
   nav.classList.toggle('active');
-});
+  navToggle.classList.toggle('active'); // transforma em X
+}
 
-// Fecha o menu quando clica em algum link
-navLinks.forEach(link => {
+// Fecha menu ao clicar em qualquer link
+links.forEach(link => {
   link.addEventListener('click', () => {
-    // Só fecha se estiver ativo
-    if (nav.classList.contains('active')) {
-      nav.classList.remove('active');
-    }
+    nav.classList.remove('active');
+    navToggle.classList.remove('active');
   });
 });
 // Navegação entre seções
