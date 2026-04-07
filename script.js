@@ -60,23 +60,18 @@ links.forEach(link => {
   });
 });
 // Navegação entre seções
-const paginas = document.querySelectorAll('.pagina');
+const nav = document.querySelector('nav');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('nav a');
 
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    paginas.forEach(p => p.classList.remove('ativa'));
-    document.getElementById(link.dataset.target).classList.add('ativa');
-
-    // Fecha menu mobile ao clicar em link
-    document.querySelector('nav').classList.remove('active');
-  });
+// Toggle menu
+navToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
 });
 
-// Voltar para home
-function voltarHome() {
-  paginas.forEach(p => p.classList.remove('ativa'));
-  document.getElementById('home').classList.add('ativa');
-
-  // Fecha menu mobile ao clicar em home
-  document.querySelector('nav').classList.remove('active');
-}
+// Fecha menu ao clicar em um link
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
