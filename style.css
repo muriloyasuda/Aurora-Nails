@@ -88,24 +88,18 @@ nav a:hover {
 .nav-toggle {
   display: none; /* escondido em desktop */
   flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  position: absolute;
-  right: 20px;
-}
-
-.nav-toggle {
-  display: none; /* escondido em desktop */
-  flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  width: 35px;       /* maior para facilitar clique */
+  height: 25px;      /* maior para facilitar clique */
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 50%;
+  right: 20px;       /* distância da borda direita */
+  top: 50%;          /* centraliza verticalmente */
   transform: translateY(-50%);
   z-index: 101;
+  padding: 5px;      /* aumenta área de clique */
+  background: rgba(0,0,0,0.1); /* opcional, só pra toque visual */
+  border-radius: 8px;           /* deixa arredondado */
 }
 
 .nav-toggle span {
