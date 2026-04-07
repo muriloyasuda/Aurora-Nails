@@ -83,7 +83,7 @@ nav a:hover {
   color: #ffccff;
 }
 
-/* Hamburger menu (mobile) */
+/* HAMBURGER */
 .nav-toggle {
   display: none; /* escondido no desktop */
   flex-direction: column;
@@ -127,7 +127,7 @@ nav.active .nav-toggle span:nth-child(3) {
     align-items: center;
     padding-top: 70px;
     gap: 10px;
-    max-height: 0;
+    max-height: 0;        /* esconde por padrão */
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
@@ -140,12 +140,12 @@ nav.active .nav-toggle span:nth-child(3) {
   }
 
   nav.active {
-    max-height: 80vh; /* rolagem se houver muitos links */
+    max-height: 80vh;     /* mostra o menu com rolagem se necessário */
     overflow-y: auto;
   }
 
   .nav-toggle {
-    display: flex;
+    display: flex;        /* garante que o botão apareça */
   }
 }
 /* CAIXAS (glass) */
