@@ -49,6 +49,15 @@ function toggleNav() {
   nav.classList.toggle('active');
 }
 
+// Fecha o menu ao clicar em qualquer link
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.querySelector('nav');
+    if (nav.classList.contains('active')) {
+      nav.classList.remove('active');
+    }
+  });
+});
 // Navegação entre seções
 const paginas = document.querySelectorAll('.pagina');
 
