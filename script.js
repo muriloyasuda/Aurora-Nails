@@ -44,15 +44,18 @@ for (let i = 0; i < 50; i++) {
 }
 
 // Toggle do menu mobile
-function toggleNav() {
-  const nav = document.querySelector('nav');
-  nav.classList.toggle('active');
-}
+const nav = document.querySelector('nav');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('nav a');
 
-// Fecha o menu ao clicar em qualquer link
-document.querySelectorAll('nav a').forEach(link => {
+navToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+// Fecha o menu quando clica em algum link
+navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    const nav = document.querySelector('nav');
+    // Só fecha se estiver ativo
     if (nav.classList.contains('active')) {
       nav.classList.remove('active');
     }
