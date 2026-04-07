@@ -89,17 +89,17 @@ nav a:hover {
   display: none; /* escondido em desktop */
   flex-direction: column;
   justify-content: space-between;
-  width: 35px;       /* maior para facilitar clique */
-  height: 25px;      /* maior para facilitar clique */
+  width: 35px;       /* maior pra facilitar clique */
+  height: 25px;      /* maior pra facilitar clique */
   cursor: pointer;
-  position: absolute;
-  right: 20px;       /* distância da borda direita */
+  position: fixed;   /* fixo na tela */
   top: 50%;          /* centraliza verticalmente */
-  transform: translateY(-50%);
+  left: 50%;         /* centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* centraliza exato */
   z-index: 101;
   padding: 5px;      /* aumenta área de clique */
   background: rgba(0,0,0,0.1); /* opcional, só pra toque visual */
-  border-radius: 8px;           /* deixa arredondado */
+  border-radius: 8px; /* arredondado */
 }
 
 .nav-toggle span {
@@ -111,13 +111,13 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* Quando o menu estiver ativo, transforma em X */
+/* Transformação do hamburger em X */
 nav.active .nav-toggle span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
 nav.active .nav-toggle span:nth-child(2) {
-  opacity: 0; /* some o do meio */
+  opacity: 0;
 }
 
 nav.active .nav-toggle span:nth-child(3) {
@@ -133,17 +133,17 @@ nav.active .nav-toggle span:nth-child(3) {
   }
 
   nav a {
-    display: none; /* escondidos antes do toggle */
+    display: none; 
     width: 100%;
     padding: 10px 20px;
   }
 
   nav.active a {
-    display: block; /* aparecem quando menu ativo */
+    display: block;
   }
 
   .nav-toggle {
-    display: flex; /* mostra hamburger */
+    display: flex;
   }
 }
 /* CAIXAS (glass) */
