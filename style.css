@@ -65,7 +65,7 @@ nav {
   align-items: center;
   gap: 40px;
   padding: 15px 20px;
-  background: rgba(0, 0, 0, 0.4); /* leve transparência */
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   z-index: 100;
   transition: all 0.3s ease;
@@ -94,12 +94,40 @@ nav a:hover {
   right: 20px;
 }
 
+.nav-toggle {
+  display: none; /* escondido em desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 101;
+}
+
 .nav-toggle span {
-  width: 25px;
+  display: block;
   height: 3px;
+  width: 100%;
   background: #fffdea;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* Quando o menu estiver ativo, transforma em X */
+nav.active .nav-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+nav.active .nav-toggle span:nth-child(2) {
+  opacity: 0; /* some o do meio */
+}
+
+nav.active .nav-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Mobile */
@@ -124,7 +152,6 @@ nav a:hover {
     display: flex; /* mostra hamburger */
   }
 }
-
 /* CAIXAS (glass) */
 .box {
   background: rgba(255, 255, 255, 0.08);
