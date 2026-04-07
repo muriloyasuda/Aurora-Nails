@@ -86,18 +86,18 @@ nav a:hover {
 
 /* Hamburger menu (mobile) */
 .nav-toggle {
-  display: none; /* escondido em desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 35px;       
   height: 25px;      
   cursor: pointer;
-  position: fixed;   /* fixo na tela */
-  top: 20px;         /* no topo */
-  right: 20px;       /* canto superior direito */
+  position: fixed;
+  top: 20px;
+  right: 20px;
   z-index: 101;
   padding: 5px;      
-  background: rgba(0,0,0,0.1); /* opcional */
+  background: rgba(0,0,0,0.1);
   border-radius: 8px; 
 }
 
@@ -110,37 +110,38 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* Transformação do hamburger em X */
-nav.active .nav-toggle span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px; /* deixa espaço pro X */
+  gap: 10px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: none; /* escondido por padrão */
 }
 
-nav.active .nav-toggle span:nth-child(2) {
-  opacity: 0;
+/* Mostrar menu ativo */
+nav.active {
+  display: flex;
 }
 
-nav.active .nav-toggle span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+/* Links */
+nav a {
+  color: #fffdea;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 60px 15px 15px 15px; /* topo maior pra não ficar atrás do X */
-  }
-
-  nav a {
-    display: none; 
-    width: 100%;
-    padding: 10px 20px;
-  }
-
-  nav.active a {
-    display: block;
-  }
-
   .nav-toggle {
     display: flex;
   }
