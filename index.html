@@ -110,6 +110,13 @@
 
 <!-- NAVBAR -->
 <nav>
+  <!-- Botão hamburger para mobile -->
+  <div class="nav-toggle" onclick="toggleNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <a onclick="voltarHome()">HOME</a>
 
   <a class="nav-link" data-target="sobre">SOBRE</a>
@@ -120,6 +127,7 @@
   <a class="nav-link" data-target="Tecnicas">TECNICAS</a>
   <a class="nav-link" data-target="Materiais">MATERIAIS</a>
   <a class="nav-link" data-target="Para-Voce">PARA-VOCÊ</a>
+ </div>
 </nav>
 
 <!-- SOBRE -->
@@ -253,8 +261,6 @@
     <p>• valoriza técnica, higiene e um atendimento pensado nos detalhes.</p>
   </div>
 </section>
-  </div>
-</section>
 
 <footer>
   <p>Atendimento em Curitiba 📍</p>
@@ -289,7 +295,12 @@ document.getElementById("agendamento").addEventListener("submit", function(e) {
 
   window.open(url, "_blank");
 });
+
+function toggleNav() {
+  document.querySelector('nav').classList.toggle('active');
+}
 </script>
+
 
 </body>
 </html>
