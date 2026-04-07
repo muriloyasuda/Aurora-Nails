@@ -89,17 +89,16 @@ nav a:hover {
   display: none; /* escondido em desktop */
   flex-direction: column;
   justify-content: space-between;
-  width: 35px;       /* maior pra facilitar clique */
-  height: 25px;      /* maior pra facilitar clique */
+  width: 35px;       
+  height: 25px;      
   cursor: pointer;
   position: fixed;   /* fixo na tela */
-  top: 50%;          /* centraliza verticalmente */
-  left: 50%;         /* centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* centraliza exato */
+  top: 20px;         /* no topo */
+  right: 20px;       /* canto superior direito */
   z-index: 101;
-  padding: 5px;      /* aumenta área de clique */
-  background: rgba(0,0,0,0.1); /* opcional, só pra toque visual */
-  border-radius: 8px; /* arredondado */
+  padding: 5px;      
+  background: rgba(0,0,0,0.1); /* opcional */
+  border-radius: 8px; 
 }
 
 .nav-toggle span {
@@ -129,7 +128,7 @@ nav.active .nav-toggle span:nth-child(3) {
   nav {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px;
+    padding: 60px 15px 15px 15px; /* topo maior pra não ficar atrás do X */
   }
 
   nav a {
